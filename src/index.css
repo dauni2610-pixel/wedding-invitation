@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-cream text-ink font-body antialiased;
+    @apply bg-parchment text-ink font-body antialiased;
     /* 모바일 세로 스크롤 청첩장 컨셉 — 넓은 화면에서도 카드처럼 보이게 가운데 정렬 */
     overscroll-behavior-y: none;
   }
@@ -18,8 +18,14 @@
     margin: 0 auto;
     min-height: 100vh;
     position: relative;
-    background: #f7f4ee;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+    background-color: #f4ecd8;
+    /* 파피루스 섬유 질감 + 고서(古書)를 감싸는 이중 금박 테두리 */
+    background-image: theme('backgroundImage.papyrus');
+    box-shadow:
+      0 0 0 1px theme('colors.gold.400' / 60%),
+      inset 0 0 0 6px theme('colors.parchment'),
+      inset 0 0 0 7px theme('colors.gold.400' / 45%),
+      0 0 60px rgba(0, 0, 0, 0.12);
     overflow-x: hidden;
   }
 }

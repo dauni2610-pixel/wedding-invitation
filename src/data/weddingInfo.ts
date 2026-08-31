@@ -8,8 +8,6 @@ export interface Person {
   role: '신랑' | '신부'
   fatherName?: string
   motherName?: string
-  /** 본인이 몇째 아들/딸인지 (예: '장남', '차녀') */
-  order?: string
   phone?: string
   bank?: string
   accountNumber?: string
@@ -17,48 +15,41 @@ export interface Person {
 }
 
 export const groom: Person = {
-  name: '정우',
+  name: '정다운',
   role: '신랑',
-  fatherName: '홍길동',
-  motherName: '김영희',
-  order: '장남',
-  phone: '010-1234-5678',
-  bank: '국민은행',
-  accountNumber: '123456-78-901234',
-  accountHolder: '정우',
+  fatherName: '정이환',
+  motherName: '박경숙',
+  // 마음 전하실 곳(계좌번호)은 아직 미정 — 값을 채우면 AccountInfo 섹션에 자동으로 표시됩니다.
 }
 
 export const bride: Person = {
-  name: '서연',
+  name: '김수민',
   role: '신부',
-  fatherName: '이철수',
-  motherName: '박미경',
-  order: '장녀',
-  phone: '010-9876-5432',
-  bank: '신한은행',
-  accountNumber: '987654-32-109876',
-  accountHolder: '서연',
+  fatherName: '김종구',
+  motherName: '공상은',
+  // 마음 전하실 곳(계좌번호)은 아직 미정 — 값을 채우면 AccountInfo 섹션에 자동으로 표시됩니다.
 }
 
 export const weddingDate = {
-  // JS Date는 월(month)이 0부터 시작하므로 5월 = 4
-  date: new Date(2026, 4, 9, 13, 0, 0),
-  dateLabel: '2026년 5월 9일 토요일 오후 1시',
+  // JS Date는 월(month)이 0부터 시작하므로 12월 = 11
+  date: new Date(2026, 11, 13, 18, 0, 0),
+  dateLabel: '2026년 12월 13일 일요일 오후 6시',
 }
 
 export const venue = {
-  name: '더 클래식 웨딩홀 3층 그랜드홀',
-  address: '서울특별시 강남구 테헤란로 123',
-  phone: '02-1234-5678',
-  lat: 37.5012743,
-  lng: 127.0396597,
+  name: '그랜드 인터컨티넨탈 서울 파르나스 메이플룸',
+  address: '서울특별시 강남구 테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스',
+  phone: '',
+  // 대략적인 좌표입니다 — 실제 지도 API(네이버/카카오)를 붙일 때 정확한 값으로 다시 확인해주세요.
+  lat: 37.5090,
+  lng: 127.0605,
   transit: [
-    { icon: '🚇', title: '지하철', desc: '2호선 강남역 3번 출구 도보 5분' },
-    { icon: '🚌', title: '버스', desc: '강남역.강남역환승센터 정류장 하차' },
-    { icon: '🚗', title: '주차', desc: '건물 지하 1~3층 3시간 무료 주차' },
+    { icon: '🚇', title: '지하철', desc: '2호선 삼성역 5·6번 출구 연결' },
+    { icon: '🚌', title: '버스', desc: '삼성역/코엑스 정류장 하차' },
+    { icon: '🚗', title: '주차', desc: '호텔 지하 주차장 이용 (하객 무료 주차 확인 예정)' },
   ],
-  naverMapUrl: 'https://map.naver.com/',
-  kakaoMapUrl: 'https://map.kakao.com/',
+  naverMapUrl: 'https://map.naver.com/p/search/그랜드 인터컨티넨탈 서울 파르나스',
+  kakaoMapUrl: 'https://map.kakao.com/?q=그랜드 인터컨티넨탈 서울 파르나스',
   tmapUrl: 'https://tmap.life/',
 }
 
@@ -81,7 +72,6 @@ export const gallery = {
     '/gallery/photo3.jpg',
     '/gallery/photo4.jpg',
     '/gallery/photo5.jpg',
-    '/gallery/photo6.jpg',
   ],
 }
 

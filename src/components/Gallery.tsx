@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { gallery } from '../data/weddingInfo'
+import { asset } from '../lib/asset'
 
 /** public/gallery 아래 실제 사진이 없으면 번호가 적힌 플레이스홀더 박스를 보여줍니다. */
 function GalleryThumb({ src, index, onClick }: { src: string; index: number; onClick: () => void }) {
@@ -12,18 +13,18 @@ function GalleryThumb({ src, index, onClick }: { src: string; index: number; onC
     <button
       type="button"
       onClick={onClick}
-      className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-sage-100"
+      className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-clay-100"
     >
       {!errored ? (
         <img
-          src={src}
+          src={asset(src)}
           alt={`웨딩 사진 ${index + 1}`}
           className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
           onError={() => setErrored(true)}
           loading="lazy"
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-1 text-sage-400">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-1 text-clay-400">
           <span className="text-xl">📷</span>
           <span className="text-[10px]">{index + 1}</span>
         </div>
@@ -36,7 +37,7 @@ export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-sage-50 px-6 py-20">
+    <section className="flex flex-col items-center gap-8 bg-clay-50 px-6 py-20">
       <SectionHeading eyebrow="GALLERY" title="우리의 순간들" />
 
       <Reveal delay={0.15} className="grid w-full grid-cols-3 gap-1.5">
@@ -55,7 +56,7 @@ export default function Gallery() {
             onClick={() => setActiveIndex(null)}
           >
             <img
-              src={gallery.images[activeIndex]}
+              src={asset(gallery.images[activeIndex])}
               alt={`웨딩 사진 ${activeIndex + 1} 크게 보기`}
               className="max-h-[80vh] max-w-full rounded-sm object-contain"
             />

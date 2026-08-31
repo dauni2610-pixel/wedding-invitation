@@ -14,7 +14,7 @@ export default function Countdown() {
   const timeLeft = useCountdown(weddingDate.date)
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-sage-50 px-8 py-20">
+    <section className="flex flex-col items-center gap-8 bg-clay-50 px-8 py-20">
       <SectionHeading
         eyebrow="COUNTDOWN"
         title="설레는 순간까지"
@@ -25,9 +25,9 @@ export default function Countdown() {
         {UNITS.map((unit) => (
           <div
             key={unit.key}
-            className="flex flex-col items-center gap-1 rounded-lg border border-sage-200 bg-white/70 py-4 shadow-sm"
+            className="flex flex-col items-center gap-1 rounded-lg border border-clay-200 bg-parchment py-4 shadow-sm"
           >
-            <span className="font-serif text-2xl tabular-nums text-sage-700">
+            <span className="font-display text-2xl tabular-nums text-clay-700">
               {String(timeLeft[unit.key]).padStart(2, '0')}
             </span>
             <span className="text-[10px] tracking-widest text-ink/50">{unit.label}</span>

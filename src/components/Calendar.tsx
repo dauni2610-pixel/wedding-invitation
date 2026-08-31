@@ -37,7 +37,7 @@ export default function Calendar() {
                   <span
                     className={
                       isTarget
-                        ? 'flex h-9 w-9 items-center justify-center rounded-full bg-sage-600 font-medium text-cream'
+                        ? 'flex h-9 w-9 items-center justify-center rounded-full bg-clay-600 font-medium text-cream'
                         : 'flex h-9 w-9 items-center justify-center text-sm text-ink/70'
                     }
                   >

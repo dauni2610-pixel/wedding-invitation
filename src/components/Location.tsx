@@ -22,18 +22,18 @@ export default function Location() {
 
       <Reveal delay={0.1} className="w-full">
         {/* 실제 지도를 붙일 자리. 네이버/카카오 지도 스크립트나 iframe으로 교체하세요. */}
-        <div className="flex h-48 w-full items-center justify-center rounded-sm border border-sage-200 bg-sage-100 text-sage-400">
+        <div className="flex h-48 w-full items-center justify-center rounded-sm border border-clay-200 bg-clay-100 text-clay-400">
           <span className="text-xs">지도 영역 (지도 API 연동 예정)</span>
         </div>
       </Reveal>
 
       <Reveal delay={0.2} className="flex w-full flex-col items-center gap-1 text-center">
-        <p className="font-serif text-base text-ink">{venue.name}</p>
+        <p className="font-display text-base tracking-wide text-ink">{venue.name}</p>
         <p className="text-sm text-ink/60">{venue.address}</p>
         <button
           type="button"
           onClick={handleCopy}
-          className="mt-2 rounded-full border border-sage-300 px-4 py-1.5 text-xs text-sage-600 transition-colors hover:bg-sage-100"
+          className="mt-2 rounded-full border border-clay-300 px-4 py-1.5 text-xs text-clay-600 transition-colors hover:bg-clay-100"
         >
           {copied ? '복사되었습니다' : '주소 복사하기'}
         </button>
@@ -44,7 +44,7 @@ export default function Location() {
           href={venue.naverMapUrl}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-sage-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-sage-50"
+          className="rounded-md border border-clay-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-clay-50"
         >
           네이버지도
         </a>
@@ -52,7 +52,7 @@ export default function Location() {
           href={venue.kakaoMapUrl}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-sage-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-sage-50"
+          className="rounded-md border border-clay-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-clay-50"
         >
           카카오맵
         </a>
@@ -60,7 +60,7 @@ export default function Location() {
           href={venue.tmapUrl}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-sage-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-sage-50"
+          className="rounded-md border border-clay-200 py-2.5 text-center text-xs text-ink/70 transition-colors hover:bg-clay-50"
         >
           티맵
         </a>
@@ -68,7 +68,7 @@ export default function Location() {
 
       <Reveal delay={0.3} className="flex w-full flex-col gap-3">
         {venue.transit.map((item) => (
-          <div key={item.title} className="flex items-start gap-3 rounded-md bg-sage-50 p-3">
+          <div key={item.title} className="flex items-start gap-3 rounded-md bg-clay-50 p-3">
             <span className="text-lg">{item.icon}</span>
             <div>
               <p className="text-sm font-medium text-ink">{item.title}</p>
