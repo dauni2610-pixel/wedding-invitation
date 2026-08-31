@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+    /* 모바일 세로 스크롤 청첩장 컨셉 — 넓은 화면에서도 카드처럼 보이게 가운데 정렬 */
+    overscroll-behavior-y: none;
+  }
+
+  #root {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    background: #f7f4ee;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
