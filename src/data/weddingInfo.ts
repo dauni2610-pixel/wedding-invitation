@@ -73,6 +73,7 @@ export const gallery = {
     '/gallery/photo4.jpg',
     '/gallery/photo5.jpg',
     '/gallery/photo6.jpg',
+    '/gallery/photo7.jpg',
   ],
 }
 

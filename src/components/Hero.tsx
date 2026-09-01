@@ -3,8 +3,10 @@ import { groom, bride, weddingDate } from '../data/weddingInfo'
 import { asset } from '../lib/asset'
 
 /**
- * 문이 열리자마자 보이는 화면 — 발코니 너머 노을 진 바다 풍경.
- * public/hero.jpg 자리에 원하는 사진을 넣으면 바로 교체됩니다(없으면 테라코타 톤 그라디언트로 대체).
+ * 문이 열리자마자 보이는 화면 — 발코니 너머 바다 풍경.
+ * public/hero.jpg는 문 열림 영상(door-open.mp4)의 마지막 프레임과 동일한 사진이라,
+ * 영상이 끝나는 순간과 이 화면이 끊김 없이 자연스럽게 이어집니다.
+ * 사진을 바꾸고 싶으면 이 자리만 교체해주세요(없으면 테라코타 톤 그라디언트로 대체).
  */
 export default function Hero() {
   return (
@@ -17,13 +19,13 @@ export default function Hero() {
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/55" />
 
       <motion.p
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
-        className="relative mt-16 font-display text-xs tracking-[0.4em] text-cream/80"
+        className="relative mt-16 font-display text-xs tracking-[0.4em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
       >
         WE ARE GETTING MARRIED
       </motion.p>
@@ -58,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-4 font-display text-sm tracking-[0.2em] text-cream/90"
+          className="mt-4 font-display text-sm tracking-[0.2em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
         >
           {weddingDate.dateLabel}
         </motion.p>
@@ -69,7 +71,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.8 }}
-        className="relative mb-10 flex flex-col items-center gap-2 text-cream/80"
+        className="relative mb-10 flex flex-col items-center gap-2 text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
       >
         <span className="font-display text-[11px] tracking-[0.3em]">CONFIRM YOUR ATTENDANCE</span>
         <motion.span
