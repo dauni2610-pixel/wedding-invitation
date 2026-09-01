@@ -3,8 +3,8 @@ import { groom, bride, weddingDate } from '../data/weddingInfo'
 import { asset } from '../lib/asset'
 
 /**
- * 봉투가 열리자마자 보이는 첫 화면.
- * public/hero.jpg 를 넣으면 실제 사진이, 없으면 테라코타 톤 그라디언트가 배경으로 보입니다.
+ * 문이 열리자마자 보이는 화면 — 발코니 너머 노을 진 바다 풍경.
+ * public/hero.jpg 자리에 원하는 사진을 넣으면 바로 교체됩니다(없으면 테라코타 톤 그라디언트로 대체).
  */
 export default function Hero() {
   return (
