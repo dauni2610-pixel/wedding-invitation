@@ -33,7 +33,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.9 }}
-          className="font-display text-5xl leading-tight drop-shadow-sm"
+          className="font-display text-5xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
         >
           {groom.name}
         </motion.h1>
@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="font-display text-sm tracking-widest text-cream/70"
+          className="font-display text-sm tracking-widest text-gold-300/80"
         >
           &amp;
         </motion.span>
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.9 }}
-          className="font-display text-5xl leading-tight drop-shadow-sm"
+          className="font-display text-5xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
         >
           {bride.name}
         </motion.h1>
