@@ -23,14 +23,6 @@ export default {
           500: '#b08d4a',
           600: '#8f7038',
         },
-        // 첫 화면 왁스 봉인용 블러시 핑크
-        blush: {
-          200: '#f6e3e2',
-          300: '#f0cdcd',
-          400: '#e3aeae',
-          500: '#d18f92',
-          600: '#b06f75',
-        },
         parchment: '#f4ecd8',
         // 어두운 배경(봉투/푸터) 위에서 쓰는 밝은 아이보리 — parchment보다 한 톤 밝음
         cream: '#f8f1e0',
@@ -41,7 +33,7 @@ export default {
         display: ['"Cinzel"', '"Noto Serif KR"', 'serif'],
         // 본문/설명 문구용 클래식 세리프
         body: ['"EB Garamond"', '"Noto Serif KR"', 'serif'],
-        // 첫 화면 봉투의 손글씨 문구용 캘리그라피 스크립트 (영문 전용)
+        // 첫 화면 문구용 캘리그라피 스크립트 (영문 전용)
         script: ['"Alex Brush"', 'cursive'],
       },
       backgroundImage: {
