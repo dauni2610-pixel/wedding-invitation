@@ -10,10 +10,6 @@ const tokens = weddingDate.dateLabel.split(' ')
 const dateLine1 = tokens.slice(0, 3).join(' ')
 const dateLine2 = tokens.slice(3).join(' ')
 
-// 하트 사진의 실루엣과 비슷한 통통한 하트 윤곽선 (탭하면 이 테두리만 남습니다)
-const HEART_PATH =
-  'M50 92 C 15 64, -2 40, -2 22 C -2 2, 18 -8, 34 0 C 44 5, 50 14, 50 24 C 50 14, 56 5, 66 0 C 82 -8, 102 2, 102 22 C 102 40, 85 64, 50 92 Z'
-
 /**
  * Hero 다음 화면 — 하트 사진을 탭하면 사진은 옅어지고 테두리만 남으면서,
  * 그 안에 날짜가 또렷하게 떠오릅니다.
@@ -49,19 +45,15 @@ export default function DateReveal() {
             }
           />
 
-          {/* 하트 테두리 — 탭하면 또렷해짐 */}
-          <svg viewBox="-8 -14 116 112" className="absolute inset-0 h-full w-full overflow-visible">
-            <motion.path
-              d={HEART_PATH}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="text-[#4a7fb5]"
-              initial={{ opacity: 0.35 }}
-              animate={{ opacity: revealed ? 0.9 : 0.35 }}
-              transition={{ duration: 0.8 }}
-            />
-          </svg>
+          {/* 하트 테두리 — heart.png의 실제 윤곽선을 그대로 추출한 이미지라 픽셀 단위로 정확히 겹칩니다 */}
+          <motion.img
+            src={asset('heart-outline.png')}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain"
+            initial={{ opacity: 0.3 }}
+            animate={{ opacity: revealed ? 0.95 : 0.3 }}
+            transition={{ duration: 0.8 }}
+          />
 
           {/* 날짜 문구 — 하트 정중앙에 정확히 배치 */}
           <motion.div
