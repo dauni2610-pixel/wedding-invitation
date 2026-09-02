@@ -13,7 +13,7 @@ import { asset } from '../lib/asset'
 export default function Hero() {
   return (
     <section
-      className="relative flex h-[100svh] flex-col items-center justify-between overflow-hidden bg-clay-700 text-cream"
+      className="relative h-[100svh] overflow-hidden bg-clay-700 text-cream"
       style={{
         backgroundImage:
           `url('${asset('hero.jpg')}'), linear-gradient(160deg, #3e2513 0%, #6f4220 45%, #a86a2f 75%, #d9a869 100%)`,
@@ -23,21 +23,29 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/55" />
 
-      <motion.p
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className="relative mt-16 font-display text-xs tracking-[0.4em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+      {/*
+        문 열림 영상의 마지막 프레임(hero.jpg)에서 지운 흰 천의 문구 자리와 정확히 겹치도록
+        절대 위치로 고정. 영상이 끝난 뒤 마치 이 문구가 원래 거기 있던 것처럼 이어져 보입니다.
+        (hero.jpg를 다른 사진으로 바꾸면 이 top/height 값도 그 사진의 여백 위치에 맞춰 다시 조정하세요.)
+      */}
+      <div
+        className="absolute inset-x-0 flex flex-col items-center justify-center gap-2 px-10 text-center"
+        style={{ top: '40%', height: '35%' }}
       >
-        WE ARE GETTING MARRIED
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="font-display text-xs tracking-[0.4em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+        >
+          WE ARE GETTING MARRIED
+        </motion.p>
 
-      <div className="relative flex flex-col items-center gap-3">
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.9 }}
-          className="font-display text-5xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+          className="mt-2 font-display text-4xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
         >
           {groom.name}
         </motion.h1>
@@ -45,7 +53,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="font-display text-sm tracking-widest text-gold-300/80"
+          className="font-display text-xs tracking-widest text-gold-300/80"
         >
           &amp;
         </motion.span>
@@ -53,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.9 }}
-          className="font-display text-5xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+          className="font-display text-4xl leading-tight text-gold-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
         >
           {bride.name}
         </motion.h1>
@@ -62,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-4 font-display text-sm tracking-[0.2em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+          className="mt-2 font-display text-xs tracking-[0.2em] text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
         >
           {weddingDate.dateLabel}
         </motion.p>
@@ -73,7 +81,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.8 }}
-        className="relative mb-10 flex flex-col items-center gap-2 text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+        className="absolute inset-x-0 bottom-10 flex flex-col items-center gap-2 text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
       >
         <span className="font-display text-[11px] tracking-[0.3em]">CONFIRM YOUR ATTENDANCE</span>
         <motion.span
