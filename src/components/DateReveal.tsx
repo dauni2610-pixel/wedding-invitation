@@ -2,18 +2,16 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
+import { asset } from '../lib/asset'
 import { weddingDate } from '../data/weddingInfo'
 
-const HEART_PATH =
-  'M50 84 C 18 60, 4 38, 4 22 C 4 6, 18 -1, 30 6 C 40 11, 46 20, 50 28 C 54 20, 60 11, 70 6 C 82 -1, 96 6, 96 22 C 96 38, 82 60, 50 84 Z'
-
-// dateLabel 형식: "2026년 12월 13일 일요일 오후 6시" — 앞 3토큰/뒤 3토큰으로 나눠 하트 안에 두 줄로 표시
+// dateLabel 형식: "2026년 12월 13일 일요일 오후 6시" — 앞 3토큰/뒤 3토큰으로 나눠 두 줄로 표시
 const tokens = weddingDate.dateLabel.split(' ')
 const dateLine1 = tokens.slice(0, 3).join(' ')
 const dateLine2 = tokens.slice(3).join(' ')
 
 /**
- * Hero 다음 화면 — 하트 모양을 한 번 탭하면 안쪽 채워짐 + 날짜가 서서히 떠오릅니다.
+ * Hero 다음 화면 — 하트 이미지를 한 번 탭하면 그 안에 날짜가 서서히 떠오릅니다.
  */
 export default function DateReveal() {
   const [revealed, setRevealed] = useState(false)
@@ -29,28 +27,26 @@ export default function DateReveal() {
           aria-label={revealed ? '예식 날짜' : '탭해서 날짜 확인하기'}
           className="relative flex h-64 w-64 cursor-pointer items-center justify-center"
         >
-          <svg viewBox="-4 -4 108 92" className="absolute inset-0 h-full w-full overflow-visible">
-            {/* 채워지는 하트 */}
-            <motion.path
-              d={HEART_PATH}
-              className="text-clay-200"
-              fill="currentColor"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: revealed ? 1 : 0 }}
-              transition={{ duration: 1.3, ease: 'easeInOut' }}
-            />
-            {/* 항상 보이는 윤곽선 */}
-            <path d={HEART_PATH} fill="none" stroke="currentColor" strokeWidth="1.4" className="text-clay-400" />
-          </svg>
+          <motion.img
+            src={asset('heart.png')}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_10px_20px_rgba(80,110,160,0.35)]"
+            animate={{ scale: revealed ? [1, 1.06, 1] : [1, 1.04, 1] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          />
 
           <motion.div
-            className="relative flex max-w-[150px] flex-col items-center gap-1 text-center"
+            className="relative flex max-w-[130px] flex-col items-center gap-1 text-center"
             initial={{ opacity: 0, y: 6 }}
             animate={revealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
-            transition={{ duration: 1.4, ease: 'easeOut', delay: revealed ? 0.35 : 0 }}
+            transition={{ duration: 1.4, ease: 'easeOut', delay: revealed ? 0.3 : 0 }}
           >
-            <span className="font-display text-base leading-snug text-clay-800">{dateLine1}</span>
-            <span className="font-display text-sm leading-snug text-clay-600">{dateLine2}</span>
+            <span className="font-display text-base leading-snug text-white drop-shadow-[0_1px_5px_rgba(30,50,90,0.7)]">
+              {dateLine1}
+            </span>
+            <span className="font-display text-sm leading-snug text-white/95 drop-shadow-[0_1px_5px_rgba(30,50,90,0.7)]">
+              {dateLine2}
+            </span>
           </motion.div>
 
           {!revealed && (
