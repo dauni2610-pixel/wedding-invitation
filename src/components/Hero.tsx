@@ -3,9 +3,11 @@ import { groom, bride, weddingDate } from '../data/weddingInfo'
 import { asset } from '../lib/asset'
 
 /**
- * 문이 열리자마자 보이는 화면 — 발코니 너머 바다 풍경.
- * public/hero.jpg는 문 열림 영상(door-open.mp4)의 마지막 프레임과 동일한 사진이라,
- * 영상이 끝나는 순간과 이 화면이 끊김 없이 자연스럽게 이어집니다.
+ * 문이 열리자마자 보이는 화면 — 정원에 걸린 흰 천 장식.
+ * public/hero.jpg는 문 열림 영상(door-open.mp4)의 마지막 프레임에서, AI가 잘못 그려넣은
+ * 예시 문구("We're Engaged! EMMA&MATEO ...")만 자연스럽게 지운 사진입니다.
+ * 그 자리에 아래 신랑신부 이름 텍스트가 얹혀서, 마치 저 천에 우리 이름이 적힌 것처럼 보입니다.
+ * 영상이 끝나는 순간과 이 화면이 끊김 없이 이어집니다.
  * 사진을 바꾸고 싶으면 이 자리만 교체해주세요(없으면 테라코타 톤 그라디언트로 대체).
  */
 export default function Hero() {
