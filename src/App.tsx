@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import DoorIntro from './components/DoorIntro'
 import Hero from './components/Hero'
+import DateReveal from './components/DateReveal'
 import Greeting from './components/Greeting'
 import Countdown from './components/Countdown'
 import Calendar from './components/Calendar'
@@ -32,6 +33,7 @@ function App() {
 
       <main>
         <Hero />
+        <DateReveal />
         <Greeting />
         <Countdown />
         <Calendar />
