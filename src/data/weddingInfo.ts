@@ -64,6 +64,20 @@ export const greeting = {
   ],
 }
 
+export const story = {
+  eyebrow: 'OUR STORY',
+  title: '우리의 이야기',
+  // 아래 항목들은 예시입니다 — 실제 두 분의 이야기(날짜·제목·문장)로 바꿔주세요.
+  // date는 자유 형식 문자열입니다 (예: '2021.03', '2023년 여름' 등 원하는 표기로 사용 가능).
+  milestones: [
+    { date: '20XX.XX', title: '처음 만난 날', description: '우연히 마주친 순간, 서로를 알아보았습니다.' },
+    { date: '20XX.XX', title: '연인이 되다', description: '설레는 마음을 확인하고, 함께 걷기로 했습니다.' },
+    { date: '20XX.XX', title: '함께한 시간들', description: '크고 작은 순간들을 채워가며 서로에게 스며들었습니다.' },
+    { date: '20XX.XX', title: '평생을 약속하다', description: '이제 같은 곳을 바라보며 걸어가기로 약속했습니다.' },
+    { date: '2026.12.13', title: '결혼합니다', description: '두 사람이 하나가 되는 날, 함께해 주세요.' },
+  ],
+}
+
 export const gallery = {
   // public/gallery 폴더에 실제 사진을 넣고 파일명을 아래에 채워주세요.
   images: [
@@ -73,7 +87,6 @@ export const gallery = {
     '/gallery/photo4.jpg',
     '/gallery/photo5.jpg',
     '/gallery/photo6.jpg',
-    '/gallery/photo7.jpg',
   ],
 }
 
