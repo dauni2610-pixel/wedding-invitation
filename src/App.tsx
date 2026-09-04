@@ -13,7 +13,7 @@ import AccountInfo from './components/AccountInfo'
 import Footer from './components/Footer'
 import { asset } from './lib/asset'
 
-const BGM_VOLUME = 0.45
+const BGM_VOLUME = 0.3
 
 function App() {
   const [isOpened, setIsOpened] = useState(false)
