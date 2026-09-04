@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 테라코타(적갈색 도기)와 금박을 기준으로 한 고대 그리스풍 팔레트
-        clay: {
-          50: '#fbf3e7',
-          100: '#f4e2c4',
-          200: '#e8c793',
-          300: '#d9a869',
-          400: '#c6863f',
-          500: '#a86a2f',
-          600: '#8a5426',
-          700: '#6f4220',
-          800: '#5a361d',
-          900: '#3e2513',
+        // 화이트 로즈 + 세이지 리본 + 바다를 기준으로 한 코스탈 보태니컬 팔레트
+        sage: {
+          50: '#f5f6f1',
+          100: '#e8ebe0',
+          200: '#d1d8c2',
+          300: '#b1bd9a',
+          400: '#8fa073',
+          500: '#758657',
+          600: '#5d6b45',
+          700: '#4a5637',
+          800: '#3d472e',
+          900: '#2e3523',
         },
         gold: {
           300: '#e3c98f',
@@ -23,10 +23,10 @@ export default {
           500: '#b08d4a',
           600: '#8f7038',
         },
-        parchment: '#f4ecd8',
-        // 어두운 배경(봉투/푸터) 위에서 쓰는 밝은 아이보리 — parchment보다 한 톤 밝음
-        cream: '#f8f1e0',
-        ink: '#2e2416',
+        parchment: '#faf8f3',
+        // 어두운 배경(문/푸터) 위에서 쓰는 밝은 아이보리 — parchment보다 한 톤 밝음
+        cream: '#fdfbf6',
+        ink: '#2b2e26',
       },
       fontFamily: {
         // 로마·그리스 비문(碑文)에서 모티프를 가져온 대문자 서체 — 이름/제목용
@@ -38,7 +38,7 @@ export default {
       },
       backgroundImage: {
         papyrus:
-          'repeating-linear-gradient(115deg, rgba(160,120,60,0.05) 0px, rgba(160,120,60,0.05) 1px, transparent 1px, transparent 5px)',
+          'repeating-linear-gradient(115deg, rgba(120,140,100,0.045) 0px, rgba(120,140,100,0.045) 1px, transparent 1px, transparent 5px)',
       },
       keyframes: {
         'fade-up': {

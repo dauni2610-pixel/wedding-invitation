@@ -18,7 +18,7 @@ export default function DateReveal() {
   const [revealed, setRevealed] = useState(false)
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-clay-50 px-8 py-24">
+    <section className="flex flex-col items-center gap-8 bg-sage-50 px-8 py-24">
       <SectionHeading eyebrow="SAVE THE DATE" title="설레는 그 날" />
 
       <Reveal delay={0.15}>
@@ -62,13 +62,13 @@ export default function DateReveal() {
             animate={revealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
             transition={{ duration: 1.2, ease: 'easeOut', delay: revealed ? 0.35 : 0 }}
           >
-            <span className="font-display text-lg font-medium leading-snug text-clay-800">{dateLine1}</span>
-            <span className="font-display text-sm leading-snug text-clay-600">{dateLine2}</span>
+            <span className="font-display text-lg font-medium leading-snug text-sage-800">{dateLine1}</span>
+            <span className="font-display text-sm leading-snug text-sage-600">{dateLine2}</span>
           </motion.div>
 
           {!revealed && (
             <motion.span
-              className="absolute -bottom-10 font-display text-[11px] tracking-[0.3em] text-clay-400"
+              className="absolute -bottom-10 font-display text-[11px] tracking-[0.3em] text-sage-400"
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >

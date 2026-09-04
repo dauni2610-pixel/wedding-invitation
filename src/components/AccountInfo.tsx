@@ -18,7 +18,7 @@ function AccountRow({ person }: { person: Person }) {
   }
 
   return (
-    <div className="flex items-center justify-between rounded-md border border-clay-200 bg-clay-50 px-4 py-3">
+    <div className="flex items-center justify-between rounded-md border border-sage-200 bg-sage-50 px-4 py-3">
       <div>
         <p className="text-sm text-ink/60">
           {person.bank} <span className="text-ink">{person.accountHolder}</span>
@@ -28,7 +28,7 @@ function AccountRow({ person }: { person: Person }) {
       <button
         type="button"
         onClick={handleCopy}
-        className="rounded-full border border-clay-300 px-3 py-1.5 text-xs text-clay-600 transition-colors hover:bg-clay-50"
+        className="rounded-full border border-sage-300 px-3 py-1.5 text-xs text-sage-600 transition-colors hover:bg-sage-50"
       >
         {copied ? '복사됨' : '복사'}
       </button>
@@ -46,7 +46,7 @@ function AccountGroup({ label, person }: { label: string; person: Person }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between rounded-md bg-clay-50 px-4 py-3 text-sm text-ink/80"
+        className="flex w-full items-center justify-between rounded-md bg-sage-50 px-4 py-3 text-sm text-ink/80"
       >
         <span>{label}</span>
         <span className={`transition-transform ${open ? 'rotate-180' : ''}`}>⌄</span>

@@ -1,5 +1,5 @@
 import Reveal from './Reveal'
-import GreekKeyDivider from './GreekKeyDivider'
+import FloralSprig from './FloralSprig'
 
 interface SectionHeadingProps {
   eyebrow?: string
@@ -12,10 +12,10 @@ export default function SectionHeading({ eyebrow, title, subtitle }: SectionHead
   return (
     <Reveal className="flex flex-col items-center gap-3 text-center">
       {eyebrow && (
-        <span className="font-display text-[11px] tracking-[0.35em] text-clay-500">{eyebrow}</span>
+        <span className="font-display text-[11px] tracking-[0.35em] text-sage-500">{eyebrow}</span>
       )}
-      <h2 className="font-display text-3xl font-medium tracking-wide text-clay-800">{title}</h2>
-      <GreekKeyDivider className="h-2.5 w-16 text-gold-500/70" />
+      <h2 className="font-display text-3xl font-medium tracking-wide text-sage-800">{title}</h2>
+      <FloralSprig className="h-3 w-20 text-sage-500/70" />
       {subtitle && <p className="text-xs text-ink/60">{subtitle}</p>}
     </Reveal>
   )

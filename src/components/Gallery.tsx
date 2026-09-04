@@ -13,7 +13,7 @@ function GalleryThumb({ src, index, onClick }: { src: string; index: number; onC
     <button
       type="button"
       onClick={onClick}
-      className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-clay-100"
+      className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-sage-100"
     >
       {!errored ? (
         <img
@@ -24,7 +24,7 @@ function GalleryThumb({ src, index, onClick }: { src: string; index: number; onC
           loading="lazy"
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-1 text-clay-400">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-1 text-sage-400">
           <span className="text-xl">📷</span>
           <span className="text-[10px]">{index + 1}</span>
         </div>
@@ -37,7 +37,7 @@ export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-clay-50 px-6 py-20">
+    <section className="flex flex-col items-center gap-8 bg-sage-50 px-6 py-20">
       <SectionHeading eyebrow="GALLERY" title="우리의 순간들" />
 
       <Reveal delay={0.15} className="grid w-full grid-cols-3 gap-1.5">

@@ -51,12 +51,12 @@ export default function RSVP() {
   }
 
   return (
-    <section id="rsvp" className="flex flex-col items-center gap-8 bg-clay-50 px-6 py-20">
+    <section id="rsvp" className="flex flex-col items-center gap-8 bg-sage-50 px-6 py-20">
       <SectionHeading eyebrow="RSVP" title="참석 의사 전달" subtitle={rsvp.description} />
 
       {status === 'done' ? (
-        <Reveal className="rounded-md border border-clay-200 bg-parchment px-6 py-8 text-center">
-          <p className="font-body text-base text-clay-700">소중한 답변 감사합니다 🌿</p>
+        <Reveal className="rounded-md border border-sage-200 bg-parchment px-6 py-8 text-center">
+          <p className="font-body text-base text-sage-700">소중한 답변 감사합니다 🌿</p>
         </Reveal>
       ) : (
         <Reveal delay={0.1} className="w-full">
@@ -69,8 +69,8 @@ export default function RSVP() {
                   onClick={() => setSide(s)}
                   className={`rounded-md border py-2.5 text-sm transition-colors ${
                     side === s
-                      ? 'border-clay-600 bg-clay-600 text-cream'
-                      : 'border-clay-200 text-ink/60'
+                      ? 'border-sage-600 bg-sage-600 text-cream'
+                      : 'border-sage-200 text-ink/60'
                   }`}
                 >
                   {s}
@@ -86,8 +86,8 @@ export default function RSVP() {
                   onClick={() => setAttendance(a)}
                   className={`rounded-md border py-2.5 text-sm transition-colors ${
                     attendance === a
-                      ? 'border-clay-600 bg-clay-600 text-cream'
-                      : 'border-clay-200 text-ink/60'
+                      ? 'border-sage-600 bg-sage-600 text-cream'
+                      : 'border-sage-200 text-ink/60'
                   }`}
                 >
                   {a}
@@ -99,7 +99,7 @@ export default function RSVP() {
               name="name"
               required
               placeholder="이름"
-              className="rounded-md border border-clay-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-clay-500"
+              className="rounded-md border border-sage-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-sage-500"
             />
             <input
               name="guests"
@@ -107,19 +107,19 @@ export default function RSVP() {
               min={1}
               defaultValue={1}
               placeholder="참석 인원"
-              className="rounded-md border border-clay-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-clay-500"
+              className="rounded-md border border-sage-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-sage-500"
             />
             <textarea
               name="message"
               placeholder="신랑신부에게 전하고 싶은 말 (선택)"
               rows={3}
-              className="resize-none rounded-md border border-clay-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-clay-500"
+              className="resize-none rounded-md border border-sage-200 bg-parchment px-4 py-2.5 text-sm outline-none focus:border-sage-500"
             />
 
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="mt-1 rounded-md bg-clay-700 py-3 text-sm text-cream transition-colors hover:bg-clay-800 disabled:opacity-60"
+              className="mt-1 rounded-md bg-sage-700 py-3 text-sm text-cream transition-colors hover:bg-sage-800 disabled:opacity-60"
             >
               {status === 'submitting' ? '전송 중...' : '답변 보내기'}
             </button>

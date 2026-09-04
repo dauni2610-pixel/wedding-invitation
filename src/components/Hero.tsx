@@ -7,15 +7,15 @@ import { asset } from '../lib/asset'
  * 이 버전은 영상 자체에 "We're Getting Married / 신랑 & 신부 이름 / 날짜"가
  * 정확하게 나와 있어서, 별도로 텍스트를 얹지 않고 사진을 그대로 보여줍니다.
  * 영상이 끝나는 순간과 이 화면이 끊김 없이 이어집니다.
- * 사진을 바꾸고 싶으면 이 자리만 교체해주세요(없으면 테라코타 톤 그라디언트로 대체).
+ * 사진을 바꾸고 싶으면 이 자리만 교체해주세요(없으면 세이지 톤 그라디언트로 대체).
  */
 export default function Hero() {
   return (
     <section
-      className="relative h-[100svh] overflow-hidden bg-clay-700"
+      className="relative h-[100svh] overflow-hidden bg-sage-700"
       style={{
         backgroundImage:
-          `url('${asset('hero.jpg')}'), linear-gradient(160deg, #3e2513 0%, #6f4220 45%, #a86a2f 75%, #d9a869 100%)`,
+          `url('${asset('hero.jpg')}'), linear-gradient(160deg, #2e3523 0%, #4a5637 45%, #758657 75%, #b1bd9a 100%)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

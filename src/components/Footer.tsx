@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Reveal from './Reveal'
-import GreekKeyDivider from './GreekKeyDivider'
+import FloralSprig from './FloralSprig'
 import { bride, closingMessage, groom } from '../data/weddingInfo'
 
 export default function Footer() {
@@ -30,8 +30,8 @@ export default function Footer() {
   }
 
   return (
-    <footer className="flex flex-col items-center gap-6 bg-clay-800 px-8 py-20 text-center text-cream">
-      <GreekKeyDivider className="h-2.5 w-16 text-gold-400/60" />
+    <footer className="flex flex-col items-center gap-6 bg-sage-800 px-8 py-20 text-center text-cream">
+      <FloralSprig className="h-3 w-20 text-gold-300/60" />
 
       <Reveal className="flex flex-col items-center gap-3">
         <p className="font-display text-2xl">{closingMessage.title}</p>
