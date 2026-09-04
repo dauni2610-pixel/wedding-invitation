@@ -5,6 +5,7 @@ import { asset } from '../lib/asset'
 interface DoorIntroProps {
   guestName?: string
   onOpened: () => void
+  onTap?: () => void
 }
 
 /**
@@ -15,7 +16,7 @@ interface DoorIntroProps {
  * public/door-open.mp4 · door-open-poster.jpg는 Kling AI(image-to-video)로 생성한 영상입니다.
  * 다른 영상으로 바꾸고 싶으면 이 두 파일만 같은 이름으로 교체해주세요.
  */
-export default function DoorIntro({ guestName, onOpened }: DoorIntroProps) {
+export default function DoorIntro({ guestName, onOpened, onTap }: DoorIntroProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [opening, setOpening] = useState(false)
   const [hidden, setHidden] = useState(false)
@@ -23,6 +24,9 @@ export default function DoorIntro({ guestName, onOpened }: DoorIntroProps) {
   const handleOpen = () => {
     if (opening) return
     setOpening(true)
+    // 브라우저의 자동재생 정책상 소리 있는 재생은 사용자 탭 이벤트 안에서
+    // 동기적으로 호출해야 하므로, 배경음악은 여기서 함께 시작합니다.
+    onTap?.()
     videoRef.current?.play()
   }
 
