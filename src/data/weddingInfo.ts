@@ -71,7 +71,7 @@ export const story = {
   milestones: [
     { date: '2014년 가을', title: '처음 만난 날', description: '우연히 마주친 순간, 다운이 수민에게 첫눈에 반했습니다.' },
     { date: '2020년 6월', title: '연인이 되다', description: '6년이라는 시간이 지나 설레는 마음을 확인하고, 함께 걷기로 했습니다.' },
-    { date: '2026년 1월', title: '평생을 약속하다', description: '이제 같은 곳을 바라보며 걸어가기로 약속했습니다.' },
+    { date: '2026년 3월', title: '평생을 약속하다', description: '이제 같은 곳을 바라보며 걸어가기로 약속했습니다.' },
     { date: '2026.12.13', title: '결혼합니다', description: '두 사람이 하나가 되는 날, 함께해 주세요.' },
   ],
 }

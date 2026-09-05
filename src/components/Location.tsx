@@ -3,6 +3,20 @@ import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { venue } from '../data/weddingInfo'
 
+// OpenStreetMap 임베드 — 별도 API 키/도메인 등록 없이 바로 동작합니다.
+// (네이버/카카오 지도 SDK는 발급받은 키를 도메인에 등록해야 해서, 아래 버튼들로 대신 연결합니다.)
+const MAP_LAT_DELTA = 0.004
+const MAP_LNG_DELTA = 0.006
+
+function buildMapSrc() {
+  const minLng = venue.lng - MAP_LNG_DELTA
+  const maxLng = venue.lng + MAP_LNG_DELTA
+  const minLat = venue.lat - MAP_LAT_DELTA
+  const maxLat = venue.lat + MAP_LAT_DELTA
+  const bbox = `${minLng},${minLat},${maxLng},${maxLat}`
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${venue.lat},${venue.lng}`
+}
+
 export default function Location() {
   const [copied, setCopied] = useState(false)
 
@@ -21,9 +35,13 @@ export default function Location() {
       <SectionHeading eyebrow="LOCATION" title="오시는 길" />
 
       <Reveal delay={0.1} className="w-full">
-        {/* 실제 지도를 붙일 자리. 네이버/카카오 지도 스크립트나 iframe으로 교체하세요. */}
-        <div className="flex h-48 w-full items-center justify-center rounded-sm border border-sage-200 bg-sage-100 text-sage-400">
-          <span className="text-xs">지도 영역 (지도 API 연동 예정)</span>
+        <div className="h-56 w-full overflow-hidden rounded-sm border border-sage-200">
+          <iframe
+            title="예식장 위치 지도"
+            src={buildMapSrc()}
+            className="h-full w-full border-0"
+            loading="lazy"
+          />
         </div>
       </Reveal>
 
