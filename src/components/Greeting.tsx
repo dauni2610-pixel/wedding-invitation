@@ -5,7 +5,7 @@ import { bride, greeting, groom } from '../data/weddingInfo'
 export default function Greeting() {
   return (
     <section className="flex flex-col items-center gap-8 px-8 py-20">
-      <SectionHeading eyebrow="INVITATION" title={greeting.title} />
+      <SectionHeading eyebrow="Marriage Announcement" title={greeting.title} />
 
       <Reveal delay={0.1} className="text-center">
         <p className="whitespace-pre-line font-body text-[15px] leading-8 text-ink/80">

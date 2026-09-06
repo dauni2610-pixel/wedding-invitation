@@ -54,7 +54,7 @@ export const venue = {
 }
 
 export const greeting = {
-  title: '초대합니다',
+  title: '결혼을 알립니다',
   message: [
     '저희 두 사람이',
     '평생을 함께하기로 했습니다.',
