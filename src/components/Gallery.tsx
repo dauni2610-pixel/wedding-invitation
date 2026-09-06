@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -35,6 +35,22 @@ function GalleryThumb({ src, index, onClick }: { src: string; index: number; onC
 
 export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const total = gallery.images.length
+
+  const showPrev = () => setActiveIndex((i) => (i === null ? null : (i - 1 + total) % total))
+  const showNext = () => setActiveIndex((i) => (i === null ? null : (i + 1) % total))
+
+  // 데스크톱에서는 방향키로도 넘길 수 있게, ESC로는 닫을 수 있게.
+  useEffect(() => {
+    if (activeIndex === null) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') showPrev()
+      else if (e.key === 'ArrowRight') showNext()
+      else if (e.key === 'Escape') setActiveIndex(null)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [activeIndex])
 
   return (
     <section className="flex flex-col items-center gap-8 bg-sage-50 px-6 py-20">
@@ -60,6 +76,7 @@ export default function Gallery() {
               alt={`웨딩 사진 ${activeIndex + 1} 크게 보기`}
               className="max-h-[80vh] max-w-full rounded-sm object-contain"
             />
+
             <button
               type="button"
               className="absolute right-5 top-5 text-2xl text-white/80"
@@ -68,6 +85,37 @@ export default function Gallery() {
             >
               ✕
             </button>
+
+            {total > 1 && (
+              <>
+                <button
+                  type="button"
+                  className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-3xl text-white/80 transition-colors hover:text-white"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    showPrev()
+                  }}
+                  aria-label="이전 사진"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-3xl text-white/80 transition-colors hover:text-white"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    showNext()
+                  }}
+                  aria-label="다음 사진"
+                >
+                  ›
+                </button>
+
+                <span className="absolute bottom-6 left-0 right-0 text-center text-xs tracking-widest text-white/60">
+                  {activeIndex + 1} / {total}
+                </span>
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
