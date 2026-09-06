@@ -33,12 +33,26 @@ function GalleryThumb({ src, index, onClick }: { src: string; index: number; onC
   )
 }
 
+// 이전/다음 중 어느 방향으로 넘어가는지에 따라 슬라이드 방향을 바꿔주는 variants.
+const slideVariants = {
+  enter: (direction: number) => ({ x: direction > 0 ? 40 : -40, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (direction: number) => ({ x: direction > 0 ? -40 : 40, opacity: 0 }),
+}
+
 export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [direction, setDirection] = useState(0)
   const total = gallery.images.length
 
-  const showPrev = () => setActiveIndex((i) => (i === null ? null : (i - 1 + total) % total))
-  const showNext = () => setActiveIndex((i) => (i === null ? null : (i + 1) % total))
+  const showPrev = () => {
+    setDirection(-1)
+    setActiveIndex((i) => (i === null ? null : (i - 1 + total) % total))
+  }
+  const showNext = () => {
+    setDirection(1)
+    setActiveIndex((i) => (i === null ? null : (i + 1) % total))
+  }
 
   // 데스크톱에서는 방향키로도 넘길 수 있게, ESC로는 닫을 수 있게.
   useEffect(() => {
@@ -71,11 +85,20 @@ export default function Gallery() {
             exit={{ opacity: 0 }}
             onClick={() => setActiveIndex(null)}
           >
-            <img
-              src={asset(gallery.images[activeIndex])}
-              alt={`웨딩 사진 ${activeIndex + 1} 크게 보기`}
-              className="max-h-[80vh] max-w-full rounded-sm object-contain"
-            />
+            <AnimatePresence mode="wait" custom={direction} initial={false}>
+              <motion.img
+                key={activeIndex}
+                src={asset(gallery.images[activeIndex])}
+                alt={`웨딩 사진 ${activeIndex + 1} 크게 보기`}
+                className="max-h-[80vh] max-w-full rounded-sm object-contain"
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+              />
+            </AnimatePresence>
 
             <button
               type="button"
