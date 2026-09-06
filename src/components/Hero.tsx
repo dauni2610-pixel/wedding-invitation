@@ -20,25 +20,17 @@ export default function Hero() {
         backgroundPosition: 'center',
       }}
     >
-      {/* 하단 CTA 가독성을 위한 은은한 음영 */}
+      {/* 하단 크레딧 문구 가독성을 위한 은은한 음영 */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/55 to-transparent" />
 
-      <motion.a
-        href="#rsvp"
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute inset-x-0 bottom-10 flex flex-col items-center gap-2 text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+        className="absolute inset-x-0 bottom-10 flex flex-col items-center text-cream/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
       >
-        <span className="font-display text-[11px] tracking-[0.3em]">CONFIRM YOUR ATTENDANCE</span>
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-          className="text-lg"
-        >
-          ⌄
-        </motion.span>
-      </motion.a>
+        <span className="font-display text-[11px] tracking-[0.3em]">MADE BY DAUN</span>
+      </motion.div>
     </section>
   )
 }

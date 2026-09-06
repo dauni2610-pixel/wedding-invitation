@@ -4,11 +4,7 @@ import BgmToggle from './components/BgmToggle'
 import Hero from './components/Hero'
 import OurStory from './components/OurStory'
 import Greeting from './components/Greeting'
-import Countdown from './components/Countdown'
-import Calendar from './components/Calendar'
 import Gallery from './components/Gallery'
-import Location from './components/Location'
-import RSVP from './components/RSVP'
 import AccountInfo from './components/AccountInfo'
 import Footer from './components/Footer'
 import { asset } from './lib/asset'
@@ -82,11 +78,7 @@ function App() {
         <Hero />
         <OurStory />
         <Greeting />
-        <Countdown />
-        <Calendar />
         <Gallery />
-        <Location />
-        <RSVP />
         <AccountInfo />
         <Footer />
       </main>

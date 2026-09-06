@@ -56,11 +56,17 @@ export const venue = {
 export const greeting = {
   title: '초대합니다',
   message: [
-    '서로 다른 길을 걸어온 두 사람이',
-    '이제 하나의 길을 함께 걸어가려 합니다.',
+    '저희 두 사람이',
+    '평생을 함께하기로 했습니다.',
     '',
-    '따뜻한 마음으로 축복해 주시면',
-    '더없이 큰 기쁨으로 간직하겠습니다.',
+    '가족들과 작은 자리를 마련해',
+    '2026년 12월 13일 결혼식을 올립니다.',
+    '',
+    '소중한 분들께',
+    '기쁜 소식만큼은 전하고 싶었습니다.',
+    '',
+    '저희의 새로운 시작을',
+    '따뜻하게 축복해 주세요.',
   ],
 }
 
@@ -72,7 +78,7 @@ export const story = {
     { date: '2014년 가을', title: '처음 만난 날', description: '우연히 마주친 순간, 다운이 수민에게 첫눈에 반했습니다.' },
     { date: '2020년 6월', title: '연인이 되다', description: '6년이라는 시간이 지나 설레는 마음을 확인하고, 함께 걷기로 했습니다.' },
     { date: '2026년 3월', title: '평생을 약속하다', description: '이제 같은 곳을 바라보며 걸어가기로 약속했습니다.' },
-    { date: '2026.12.13', title: '결혼합니다', description: '두 사람이 하나가 되는 날, 함께해 주세요.' },
+    { date: '2026년 12월 13일 · 그랜드 인터컨티넨탈 파르나스', title: '결혼합니다', description: '두 사람이 하나가 되는 날. 따뜻하게 축복해주세요.' },
   ],
 }
 
@@ -86,11 +92,6 @@ export const gallery = {
     '/gallery/photo5.jpg',
     '/gallery/photo6.jpg',
   ],
-}
-
-export const rsvp = {
-  enabled: true,
-  description: '참석이 어려우신 경우에도 알려주시면 감사하겠습니다.',
 }
 
 export const closingMessage = {

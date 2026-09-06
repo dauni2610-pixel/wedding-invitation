@@ -67,8 +67,8 @@ export default function DoorIntro({ guestName, onOpened, onTap }: DoorIntroProps
             animate={{ opacity: opening ? 0 : 1 }}
             transition={{ duration: 0.25 }}
           >
-            <p className="font-script text-4xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-              You&apos;re Invited
+            <p className="font-script text-3xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              We&apos;re Getting Married
             </p>
             {guestName && (
               <p className="font-display text-xs tracking-[0.3em] text-white/90 drop-shadow">{guestName}</p>
