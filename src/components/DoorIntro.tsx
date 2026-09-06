@@ -67,8 +67,8 @@ export default function DoorIntro({ guestName, onOpened, onTap }: DoorIntroProps
             animate={{ opacity: opening ? 0 : 1 }}
             transition={{ duration: 0.25 }}
           >
-            {/* 문 위로 하늘이 보이는 자리에 배치 — OUR STORY 섹션 라벨과 같은 세이지 톤으로 하늘과 어울리게 */}
-            <p className="font-script text-3xl text-sage-500 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+            {/* 문 위로 하늘이 보이는 자리에 배치 — 세이지 톤은 하늘 배경에 묻혀 잘 안 보여서 흰색으로 되돌림 */}
+            <p className="font-script text-3xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               We&apos;re Getting Married
             </p>
             {guestName && (
