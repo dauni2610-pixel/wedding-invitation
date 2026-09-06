@@ -63,11 +63,12 @@ export default function DoorIntro({ guestName, onOpened, onTap }: DoorIntroProps
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/40" />
 
           <motion.div
-            className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 px-10 text-center"
+            className="pointer-events-none absolute inset-x-0 top-[10%] flex flex-col items-center gap-2 px-10 text-center"
             animate={{ opacity: opening ? 0 : 1 }}
             transition={{ duration: 0.25 }}
           >
-            <p className="font-script text-3xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            {/* 문 위로 하늘이 보이는 자리에 배치 — OUR STORY 섹션 라벨과 같은 세이지 톤으로 하늘과 어울리게 */}
+            <p className="font-script text-3xl text-sage-500 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
               We&apos;re Getting Married
             </p>
             {guestName && (
