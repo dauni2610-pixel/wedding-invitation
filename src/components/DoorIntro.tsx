@@ -77,11 +77,11 @@ export default function DoorIntro({ guestName, onOpened, onTap }: DoorIntroProps
           </motion.div>
 
           <motion.p
-            className="absolute bottom-10 left-0 right-0 text-center font-display text-sm font-bold tracking-[0.3em] text-white/80 drop-shadow"
+            className="absolute bottom-10 left-0 right-0 text-center font-script text-2xl text-white/90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             animate={{ opacity: opening ? 0 : [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: opening ? 0 : Infinity, ease: 'easeInOut' }}
           >
-            TAP TO OPEN
+            Tap to Open
           </motion.p>
         </motion.div>
       )}
