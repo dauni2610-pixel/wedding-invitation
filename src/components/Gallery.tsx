@@ -70,10 +70,16 @@ export default function Gallery() {
     <section className="flex flex-col items-center gap-8 bg-sage-50 px-6 py-20">
       <SectionHeading eyebrow="GALLERY" title="우리의 순간들" />
 
-      <Reveal delay={0.15} className="grid w-full grid-cols-3 gap-1.5">
-        {gallery.images.map((src, i) => (
-          <GalleryThumb key={src} src={src} index={i} onClick={() => setActiveIndex(i)} />
-        ))}
+      {/* 사진이 많아 페이지가 길어지지 않도록, 2줄 반 정도만 보이고 나머지는 이 영역 안에서 스크롤합니다. */}
+      <Reveal delay={0.15} className="w-full">
+        <div className="max-h-[30rem] overflow-y-auto rounded-sm pr-1">
+          <div className="grid w-full grid-cols-3 gap-1.5">
+            {gallery.images.map((src, i) => (
+              <GalleryThumb key={src} src={src} index={i} onClick={() => setActiveIndex(i)} />
+            ))}
+          </div>
+        </div>
+        <p className="mt-3 text-center text-[11px] tracking-widest text-ink/40">↕ SCROLL</p>
       </Reveal>
 
       <AnimatePresence>
