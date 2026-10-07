@@ -37,7 +37,7 @@ Vite's `base` (`/wedding-invitation/`, set in `vite.config.ts`) is only auto-app
 
 Every reference to a `public/` file from JS/CSS must go through `asset(path)` from `src/lib/asset.ts`, which prepends `import.meta.env.BASE_URL`. Grep for `asset(` usage in `Hero.tsx`, `Gallery.tsx`, `DoorIntro.tsx`, `App.tsx` before adding a new image/video/audio reference — follow the same pattern. Native `<img>`/`<video>` `src` attributes on JSX elements still need this too, since the string itself is dynamic (comes from `weddingInfo.ts` or a template literal), not a static attribute Vite can rewrite.
 
-The one path that intentionally bypasses this: `index.html`'s `og:image` meta tag must be a **hardcoded absolute URL** (`https://dauni2610-pixel.github.io/wedding-invitation/og-image.jpg`), because link-preview crawlers (KakaoTalk, etc.) fetch the HTML directly without executing JS or resolving `BASE_URL` — a root-relative or bare path silently breaks previews with no visible error.
+The one path that intentionally bypasses this: `index.html`'s `og:image` meta tag must be a **hardcoded absolute URL** (`https://dauni2610-pixel.github.io/wedding-invitation/og-image-2.jpg`), because link-preview crawlers (KakaoTalk, etc.) fetch the HTML directly without executing JS or resolving `BASE_URL` — a root-relative or bare path silently breaks previews with no visible error.
 
 ### Intro video → Hero handoff
 
