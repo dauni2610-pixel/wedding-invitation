@@ -19,7 +19,9 @@ export const groom: Person = {
   role: '신랑',
   fatherName: '정이환',
   motherName: '박경숙',
-  // 마음 전하실 곳(계좌번호)은 아직 미정 — 값을 채우면 AccountInfo 섹션에 자동으로 표시됩니다.
+  bank: '우리은행',
+  accountNumber: '1002-444-086151',
+  accountHolder: '정다운',
 }
 
 export const bride: Person = {
@@ -27,7 +29,9 @@ export const bride: Person = {
   role: '신부',
   fatherName: '김종구',
   motherName: '공상은',
-  // 마음 전하실 곳(계좌번호)은 아직 미정 — 값을 채우면 AccountInfo 섹션에 자동으로 표시됩니다.
+  bank: '우리은행',
+  accountNumber: '1002-348-100809',
+  accountHolder: '김수민',
 }
 
 export const weddingDate = {
