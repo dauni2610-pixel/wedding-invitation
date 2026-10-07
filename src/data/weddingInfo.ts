@@ -91,6 +91,17 @@ export const gallery = {
     '/gallery/photo4.jpg',
     '/gallery/photo5.jpg',
     '/gallery/photo6.jpg',
+    '/gallery/photo7.jpg',
+    '/gallery/photo8.jpg',
+    '/gallery/photo9.jpg',
+    '/gallery/photo10.jpg',
+    '/gallery/photo11.jpg',
+    '/gallery/photo12.jpg',
+    '/gallery/photo13.jpg',
+    '/gallery/photo14.jpg',
+    '/gallery/photo15.jpg',
+    '/gallery/photo16.jpg',
+    '/gallery/photo17.jpg',
   ],
 }
 

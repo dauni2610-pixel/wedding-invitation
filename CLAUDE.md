@@ -57,7 +57,14 @@ Browsers require audio playback with sound to be triggered synchronously inside 
 
 There's no build-time pipeline for the intro video or photos — they're preprocessed once with `ffmpeg` (portrait crop/scale, watermark removal by cropping a strip or gradient-patching, poster/last-frame extraction) and committed directly into `public/` as final files. If you're asked to swap the intro video or a photo, expect to shell out to `ffmpeg` yourself rather than finding a script in this repo — there isn't one.
 
+### Fonts are a fixed Google Fonts list
+
+Fonts (Cinzel, EB Garamond, Alex Brush, Noto Serif KR) load from the single `<link>` in `index.html` with an explicit weight list per family. A Tailwind weight class that isn't in that list (e.g. `font-bold` on Cinzel before 700 was added) gets a synthesized fake bold or no visible change — add the weight to the URL first. Alex Brush (`font-script`) ships a single weight, so don't expect bold from it.
+
 ## Notable conventions
+
+- `README.md` is stale: it still describes `Envelope.tsx`, `FloralOrnament.tsx`, and the removed RSVP/Countdown/Calendar/Location sections and `.env` RSVP endpoint. Trust the code and this file over it.
+- The intro overlay text in `DoorIntro.tsx` ("We're Getting Married", "Tap to Open") is real DOM text positioned by percentage over the video's first frame (sky above the gate sits roughly in the top ~28%), not baked into the video. The text baked into the video's last frame (names/date on the banner) is separate and can't be edited without regenerating the video.
 
 - `AccountInfo.tsx` groups render `null` when a person's `bank`/`accountNumber` fields are unset in `weddingInfo.ts` — an "empty-looking" account section is expected/correct behavior until real account numbers are filled in, not a bug.
 - `?to=이름` as a query param personalizes the intro's guest-name line (read directly off `window.location.search` in `App.tsx`, no router).
