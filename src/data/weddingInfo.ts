@@ -106,6 +106,13 @@ export const gallery = {
     '/gallery/photo15.jpg',
     '/gallery/photo16.jpg',
     '/gallery/photo17.jpg',
+    '/gallery/photo18.jpg',
+    '/gallery/photo19.jpg',
+    '/gallery/photo20.jpg',
+    '/gallery/photo21.jpg',
+    '/gallery/photo22.jpg',
+    '/gallery/photo23.jpg',
+    '/gallery/photo24.jpg',
   ],
 }
 
